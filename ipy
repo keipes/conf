@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+blue='tput setaf 4'
+red='tput setaf 1'
+gray='tput setaf 0'
+green='tput setaf 2'
+purple='tput setaf 5'
+clear='tput sgr0'
+
+
+
+
+if [ $(which python) = "/Users/keithsmith/.pyenv/shims/python" ]; then
+    env_dir=$(pyenv prefix)
+    echo "$($blue)Current python is: $($purple)$(pyenv version)"
+    ip="${env_dir}/bin/ipython3"
+else
+    env_dir=$(which python)
+    echo "$($blue)Current python is: $($purple)$env_dir"
+    ip="$(which python | xargs dirname)/ipython3"
+fi
+
+if [ ! -e $ip ]; then
+    echo "$($red)ipython not available, installing...$($gray)"
+    pip install ipython==1.2.0
+    pip install pyzmq
+    pip install jinja2==2.6
+    pip install tornado
+fi
+
+echo "$($blue)Executing $($purple)$ip$($clear)"
+$ip notebook
