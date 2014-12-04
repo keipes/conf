@@ -1,0 +1,48 @@
+# Capital letters represent bold
+# k = black
+# r = red
+# g = green
+# y = yellow
+# b = blue
+# m = magenta
+# c = cyan
+# w = white
+# d = default, this will make the switch default to the bpython default theme
+
+[syntax]
+# keyword
+name = g
+# comment
+string = c
+error = m
+number = y
+operator = b
+# punctuation
+# token
+
+[interface]
+# background
+# output
+main = b
+prompt = b
+# prompt_more
+
+
+# keyword = y
+# name = c
+# comment = b
+# string = m
+# error = r
+# number = G
+# operator = Y
+# punctuation = y
+# token = C
+# paren = R
+ 
+# XXX: gnome-terminal appears to be braindead. The cursor will disappear unless
+# you set the background colour to "d".
+# background = k
+# output = w
+# main = c
+# prompt = c
+# prompt_more = b
